@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- 1. OPTIMIZACIÓN DE RED: Conexión anticipada a los servidores de Bootstrap -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
+    <!-- 2. OPTIMIZACIÓN LCP: Obliga al navegador a descargar el fondo de inmediato -->
+    <link rel="preload" as="image" href="fondo.jpg">
+    
+    <!-- 3. SEO: Metadescripción perfecta para Google -->
     <meta name="description" content="Centro de Servicios Digitales en Cupira, Estado Miranda. Ofrecemos navegación ultra rápida, copias nítidas, trámites en línea y atención de primera.">
     
     <title>Centro de Servicios Digitales - Inicio</title>
@@ -75,8 +80,10 @@
 </head>
 <body class="bg-dark text-white">
 
+    <!-- Avatar del Robot -->
     <div id="cyber-avatar"><i class="bi bi-robot"></i></div>
 
+    <!-- Barra de Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary fixed-top shadow">
         <div class="container justify-content-center">
             <a class="navbar-brand fw-bold text-white mx-0" href="#">
@@ -85,6 +92,7 @@
         </div>
     </nav>
 
+    <!-- Estructura Semántica Principal -->
     <main>
         <div class="container my-4" style="max-width: 650px;">
             
@@ -111,6 +119,7 @@
                     <i class="bi bi-play-btn-fill me-2 text-danger"></i>Conócenos por Dentro
                 </h4>
                 <div class="ratio ratio-16x9 rounded-3 overflow-hidden border border-secondary bg-black shadow">
+                    <!-- VIDEO: Recuerda subir la versión que comprimiste para máxima velocidad -->
                     <video autoplay muted loop playsinline preload="metadata" poster="fondo.jpg" class="w-100 h-100">
                         <source src="./video.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de videos locales.
@@ -144,10 +153,10 @@
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 4. RENDIMIENTO: El atributo "defer" evita que el script bloquee la carga visual -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     
     <script>
-        // Efecto del robot siguiendo al cursor
         const robot = document.getElementById('cyber-avatar');
         let objX = 0, objY = 0, actX = 0, actY = 0;
         document.addEventListener('mousemove', (e) => { 
@@ -163,7 +172,6 @@
         }
         move();
 
-        // Contador de visitas diarias usando LocalStorage
         const f = new Date().toISOString().slice(0, 10);
         let d = localStorage.getItem('cyber_fecha_dia'), v = localStorage.getItem('cyber_visitas_diarias');
         if (d !== f) { 
